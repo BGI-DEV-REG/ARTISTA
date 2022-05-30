@@ -1,0 +1,9 @@
+order	Color
+7	#EF833A
+1	#59323c
+6	#cbe86b
+5	#FFDE00
+3	#40E0D0
+0	#CCFFCC
+2	#E71D36
+4	#AEC5EB
