@@ -49,10 +49,10 @@ def kde(df, l=[5,10,15,20], t=99.99,h=50*2, kernel='tophat',w=600j,adj=1, name='
         cv2.imwrite(f'FigureS1_C_{kernel}_mm{i}_{name}.png', mm)
         print(f'FigureS1_C_{kernel}_mm{i}_{name}.png')
 
-obj = sc.read('data/Injury_15DPI_rep3_FP200000266TR_E3/Injury_15DPI_rep3_FP200000266TR_E3.ssDNA.0813.h5ad')
+obj = sc.read('15DPI_3.h5ad')
 
 # read bin1 data
-df = pd.read_csv("data/Injury_15DPI_rep3_FP200000266TR_E3/Injury_15DPI_rep3_FP200000266TR_E3.Gene_Expression_table.tsv.gz",
+df = pd.read_csv("bin1_matrix/15DPI_3.gem.gz",
                  sep='\t')
 m = df['x'].min()
 n = df['y'].min()
@@ -80,7 +80,7 @@ H = 2*50
 for center in [(4136, 3704), (4325,3750)]:
     exon_sub = get_data(exon, center, h)
     intro_sub = get_data(intro, center, h)
-    npy = obj.uns['seg_cell'][center[0]-h//2:center[0]+h//2, center[1]-h//2:center[1]+h//2]
+    npy = obj.uns['Injury_15DPI_rep3_FP200000266TR_E3']['seg_cell'][center[0]-h//2:center[0]+h//2, center[1]-h//2:center[1]+h//2]
     contours = get_c(npy, h)
     kde(intro_sub, name=f'intro_{center[0]}_{center[1]}', l=[5], kernel='gaussian', w=100j,h=H)
     kde(exon_sub, name=f'exon_{center[0]}_{center[1]}', l=[5], kernel='gaussian', w=100j,h=H)

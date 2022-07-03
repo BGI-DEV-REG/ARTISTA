@@ -20,10 +20,9 @@ mytheme <- theme(legend.position = 'right',
                  panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
 ###  RY data_compare
-setwd("D:/02.project/06RYfish/02brain_dev/00.modul/")
-obj.integrated.Find<- readRDS(paste("D:/02.project/06RYfish/02brain_dev/00.python_spifig/data/all_dev_recluster.rds",sep=''))
-ref =read.table("D:/02.project/06RYfish/02brain_dev/00.modul/Summary_Gene_Annotaion_0707.xls",header=T,fill=TRUE, na.strings = "")
-geneTRan <- read.table("D:/02.project/06RYfish/02brain_dev/00.modul/data_Cell_Cycle.uniq.txt")
+setwd("../data/Figure2_data/Figure2C")
+obj.integrated.Find<- readRDS(paste("../data/Figure2_data/Figure2C/all_dev_recluster.rds",sep=''))
+geneTRan <- read.table("../data/Figure2_data/Figure2C/data_Cell_Cycle.uniq.txt")
 a <- geneTRan$V1
 DefaultAssay(obj.integrated.Find)<-"RNA"
 obj <- AddModuleScore(
@@ -43,7 +42,7 @@ pdf("F2C_Cell_Cycle_0818RNA.pdf",width = 5.7,height = 3.1)
 print(p)
 dev.off()
 
-geneTRan <- read.table("D:/02.project/06RYfish/02brain_dev/00.modul/data_Translation.uniq.txt")
+geneTRan <- read.table("../data/Figure2_data/Figure2C/data_Translation.uniq.txt")
 a <- geneTRan$V1
 DefaultAssay(obj.integrated.Find)<-"RNA"
 obj <- AddModuleScore(
@@ -63,7 +62,7 @@ pdf("F2C_Translation_0818RNA.pdf",width = 5.7,height = 3.1)
 print(p)
 dev.off()
 
-geneTRan <- read.table("D:/02.project/06RYfish/02brain_dev/00.modul/data_NSC_gene.uniq.txt")
+geneTRan <- read.table("../data/Figure2_data/Figure2C/data_NSC_gene.uniq.txt")
 a <- geneTRan$V2
 DefaultAssay(obj.integrated.Find)<-"RNA"
 obj <- AddModuleScore(

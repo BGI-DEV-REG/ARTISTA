@@ -1,1 +1,0 @@
-bash velocyto.sh ../data/DP8400015234BL_A2_web_3.Aligned.sortedByCoord.out.merge.q10.dedup.target.bam ../data/Adult_telencephalon_rep1_DP8400015234BLA2.ssDNA_coor.csv bams Adult_telencephalon_rep1_DP8400015234BLA2 looms
